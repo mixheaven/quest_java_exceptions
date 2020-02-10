@@ -17,7 +17,12 @@ public class OddSum {
             System.out.println();
         }
         for (int i = 0; i < args.length; i++) {
-            listInt.add(Integer.parseInt(args[i]));
+            try {
+                listInt.add(Integer.parseInt(args[i]));
+            } catch (NumberFormatException e) {
+                System.err.println("Mauvaise class de chiffre!");
+                return -1;
+            }
         }
 
         res = sum(listInt);
